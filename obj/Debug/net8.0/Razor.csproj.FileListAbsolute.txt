@@ -300,3 +300,4 @@
 /home/davidv/Documents/C#/challenges/Razor/obj/Debug/net8.0/Razor.pdb
 /home/davidv/Documents/C#/challenges/Razor/obj/Debug/net8.0/Razor.genruntimeconfig.cache
 /home/davidv/Documents/C#/challenges/Razor/obj/Debug/net8.0/ref/Razor.dll
+/home/davidv/Documents/C#/challenges/Razor/obj/Debug/net8.0/Razor.sourcelink.json
