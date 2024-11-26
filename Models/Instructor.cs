@@ -1,31 +1,29 @@
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Authorization.Infrastructure;
 
 namespace Razor.Models
 {
-    public class Student
+    public class Instructor
     {
         public int ID { get; set; }
 
         [Required]
-        [StringLength(50, MinimumLength = 2)]
         [Display(Name = "Last Name")]
+        [StringLength(50)]
         public string LastName { get; set; }
 
         [Required]
-        [StringLength(50,
-        ErrorMessage = "Fist name cannot be longer than 50 characters. ",
-        MinimumLength = 2)]
         [Column("FirstName")]
-        [Display(Name = "First Name")]
+        [Display(Name = "Last Name")]
+        [StringLength(50)]
         public string FirstMidName { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Enrollment Date")]
-        public DateTime EnrollmentDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-ss}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Hire Date")]
+        public DateTime HireDate { get; set; }
 
         [Display(Name = "Full Name")]
         public string FullName
@@ -35,7 +33,8 @@ namespace Razor.Models
                 return LastName + ", " + FirstMidName;
             }
         }
-
-        public ICollection<Enrollment> Enrollments { get; set; }
+        public ICollection<Course> Courses { get; set; }
+        public OfficeAssignment OfficeAssignment { get; set; }
     }
+
 }
